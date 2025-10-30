@@ -50,7 +50,7 @@ const ProjectDetail = () => {
             className="flex items-center gap-2 text-neutral-400 hover:text-[#C787F6] transition-colors mb-8 group"
           >
             <ArrowLeft size={18} className="transition-transform group-hover:-translate-x-1" />
-            Back
+            Back to Home
           </button>
 
           {/* Judul & Subjudul */}

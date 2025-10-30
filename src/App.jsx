@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from './Components/Navbar';
 import HeroSection from './Section/HeroSection';
-import logo from './assets/Images/logo.jpg';
 import AboutSection from './Section/AboutSection';
 import PortofolioSection from './Section/Portofolio/PortofolioSection';
 import ContactSection from './Section/ContactSection';
@@ -11,6 +10,7 @@ import GradualBlur from './Components/GradualBlur.jsx';
 import ProjectDetails from "./Section/Portofolio/ProjectDetails.jsx";
 import { useLocation } from "react-router-dom";
 import useSmoothScroll from "./hooks/useSmoothScroll.jsx";
+import Particles from './Components/Particles.jsx';
 
 function App() {
   const items = [
@@ -47,10 +47,27 @@ function App() {
   useSmoothScroll();
   const location = useLocation();
   const showNavbar = !location.pathname.startsWith('/projects/');
+  const showFooter = location.pathname === '/';
+  const showParticles = location.pathname === '/';
 
   return (
-    <div className="font-sans">
-      {showNavbar && (
+    <div className="font-sans bg-black"> 
+      {showParticles && (
+        <div className="fixed inset-0 z-0 pointer-events-none"> {/* Fixed position, behind content */}
+          <Particles
+            particleColors={['#ffffff', '#ffffff']}
+            particleCount={400} 
+            particleSpread={10}
+            speed={0.1}
+            particleBaseSize={100} // This seems large, maybe try smaller like 2 or 3?
+            moveParticlesOnHover={false}
+            alphaParticles={true}
+            disableRotation={false}
+          />
+        </div>
+      )}
+
+      {/* {showNavbar && (
         <Navbar
           logo={logo}
           logoAlt="Company Logo"
@@ -61,7 +78,7 @@ function App() {
           buttonTextColor="#000000ff"
           ease="power3.out"
         />
-      )}
+      )} */}
 
       {/* MAIN ROUTES */}
       <main>
@@ -82,13 +99,13 @@ function App() {
       </main>
 
       {/* FOOTER — tampil di semua halaman */}
-      <Footer />
+      {showFooter && <Footer />}
 
       {/* GRADUAL BLUR — efek dekoratif */}
       <GradualBlur
         target="page"
         position="bottom"
-        height="6rem"
+        height="5rem"
         strength={1}
         divCount={5}
         curve="bezier"

@@ -1,6 +1,8 @@
 import React, {useRef} from 'react';
 import VariableProximity from "../Components/VariableProximity.jsx";
 import Particles from '../Components/Particles.jsx';
+import RotatingText from '../Components/RotatingText.jsx';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 
 const handleAnimationComplete = () => {
@@ -24,12 +26,65 @@ export default function HeroSection() {
                     />
                     
                 </div>
+
+                
+
                 {/* Konten utama */}
                 <div className="relative z-10 flex flex-col items-center">
+
+                     {/* C. TAUTAN SOSIAL PROFESIONAL */}
+                    {/* (Hapus 'tags' ungu yang lama) */}
+                    <div className="flex gap-6 mb-4">
+                        
+                        {/* GitHub Link */}
+                        <a 
+                            href="https://github.com/Gr1X"
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            aria-label="GitHub Profile"
+                            className="relative p-4 rounded-full flex items-center justify-center
+                                        bg-[#170928]/50 backdrop-blur-lg border border-purple-700/60
+                                        text-gray-300 hover:text-white hover:border-[#B873F8] 
+                                        hover:shadow-[0_0_20px_rgba(184,115,248,0.5)]
+                                        transition-all duration-300 hover:scale-110"
+                            >
+                                <Github size={24} />
+                            </a>
+        
+                            {/* LinkedIn Link */}
+                            <a 
+                            // PERBAIKAN LINKEDIN: Tambahkan 'https://'
+                                href="https://www.linkedin.com/in/gfrederico" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn Profile"
+                                className="relative p-4 rounded-full flex items-center justify-center
+                                        bg-[#170928]/50 backdrop-blur-lg border border-purple-700/60
+                                        text-gray-300 hover:text-white hover:border-[#B873F8] 
+                                        hover:shadow-[0_0_20px_rgba(184,115,248,0.5)]
+                                        transition-all duration-300 hover:scale-110"
+                            >
+                                <Linkedin size={24} />
+                            </a>
+
+                            {/* Email Link */}
+                            <a 
+                                href="mailto:grfrederico32@gmail.com"
+                                aria-label="Send an Email"
+                                className="relative p-4 rounded-full flex items-center justify-center
+                                        bg-[#170928]/50 backdrop-blur-lg border border-purple-700/60
+                                        text-gray-300 hover:text-white hover:border-[#B873F8] 
+                                        hover:shadow-[0_0_20px_rgba(184,115,248,0.5)]
+                                        transition-all duration-300 hover:scale-110"
+                            >
+                                <Mail size={24} />
+                            </a>
+                    </div>
+
                     <div ref={containerRef} style={{position: 'relative'}}>
                         <VariableProximity
-                            label={"Hi, I'am Frederico"}
-                            className={'variable-proximity-demo text-7xl'} 
+                            label={"Hi, I'm Frederico."}
+                            className={'variable-proximity-demo text-6xl sm:text-7xl font-bold text-center'} 
                             fromFontVariationSettings="'wght' 400, 'opsz' 9"
                             toFontVariationSettings="'wght' 1000, 'opsz' 40"
                             containerRef={containerRef}
@@ -42,51 +97,53 @@ export default function HeroSection() {
                         />
                     </div>
 
+
                     {/*  */}
                     <p className="text-xl text-gray-300 max-w-2xl text-center mt-6">
                         I build responsive and intelligent applications to solve real-world problems.
                     </p>
 
-                    {/* 3. TOMBOL / TAGS */}
-                    <div className="grid grid-cols-2 gap-4 mt-8 mx-auto max-w-xl">
-                        <button class="relative h-12 px-8 rounded-lg overflow-hidden transition-all duration-500 group">
-                            <div class="absolute inset-0 rounded-lg p-[2px] bg-gradient-to-b from-[#654358] via-[#17092A] to-[#2F0D64]">
-                                <div class="absolute inset-0 bg-[#170928] rounded-lg opacity-90"></div>
+                    <a  
+                        href="/public/cv.pdf"
+                        download="Gregorius_Frederico_cv.pdf"
+                        class="mt-4 font-sans cursor-pointer relative bg-white/10 py-2 rounded-full min-w-[8.5rem] min-h-[2.92rem] group max-w-full flex items-center justify-start 
+                        hover:bg-gradient-to-r from-[#D69DDE] to-[#B873F8] transition-all duration-[0.8s] ease-[cubic-bezier(0.510,0.026,0.368,1.016)] 
+                        shadow-[inset_1px_2px_5px_rgba(199,135,246,0.2)]" >
+                        <div class="absolute flex px-1 py-0.5 justify-start items-center inset-0">
+                            <div
+                            class="w-[0%] group-hover:w-full transition-all duration-[1s] ease-[cubic-bezier(0.510,0.026,0.368,1.016)]"
+                            ></div>
+                            <div
+                            class="rounded-full shrink-0 flex justify-center items-center 
+                            shadow-[inset_1px_-1px_3px_0_#170928] h-full aspect-square 
+                            bg-gradient-to-r from-[#D69DDE] to-[#B873F8] transition-all duration-[1s] ease-[cubic-bezier(0.510,0.026,0.368,1.016)] 
+                            group-hover:bg-[#170928]" >
+                            <div
+                                class="size-[0.8rem] 
+                                text-[#170928] group-hover:text-[#D69DDE] group-hover:-rotate-45 transition-all duration-[1s] ease-[cubic-bezier(0.510,0.026,0.368,1.016)]"
+                            >
+                                <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 16 16"
+                                height="100%"
+                                width="100%"
+                                >
+                                <path
+                                    fill="currentColor"
+                                    d="M12.175 9H0V7H12.175L6.575 1.4L8 0L16 8L8 16L6.575 14.6L12.175 9Z"
+                                ></path>
+                                </svg>
                             </div>
-                            <div class="absolute inset-[2px] bg-[#170928] rounded-lg opacity-95"></div>
-                            <div class="absolute inset-[2px] bg-gradient-to-r from-[#170928] via-[#1d0d33] to-[#170928] rounded-lg opacity-90"></div>
-                            <div class="absolute inset-[2px] bg-gradient-to-b from-[#654358]/40 via-[#1d0d33] to-[#2F0D64]/30 rounded-lg opacity-80"></div>
-                            <div class="absolute inset-[2px] bg-gradient-to-br from-[#C787F6]/10 via-[#1d0d33] to-[#2A1736]/50 rounded-lg"></div>
-                            <div class="absolute inset-[2px] shadow-[inset_0_0_15px_rgba(199,135,246,0.15)] rounded-lg"></div>
-                            <div class="relative flex items-center justify-center gap-2">
-                                <span class="text-lg  bg-gradient-to-b from-[#fffff9] to-[#B873F8] bg-clip-text 
-                                text-transparent drop-shadow-[0_0_12px_rgba(199,135,246,0.4)] tracking-tighter">
-                                AI/ML Enthusiast
-                                </span>
                             </div>
-                            <div class="absolute inset-[2px] opacity-0 transition-opacity duration-300 bg-gradient-to-r from-[#2A1736]/20 via-[#C787F6]/10 
-                            to-[#2A1736]/20 group-hover:opacity-100 rounded-lg"></div>
-                        </button>
-
-                        <button class="relative h-12 px-8 rounded-lg overflow-hidden transition-all duration-500 group">
-                            <div class="absolute inset-0 rounded-lg p-[2px] bg-gradient-to-b from-[#654358] via-[#17092A] to-[#2F0D64]">
-                                <div class="absolute inset-0 bg-[#170928] rounded-lg opacity-90"></div>
-                            </div>
-                            <div class="absolute inset-[2px] bg-[#170928] rounded-lg opacity-95"></div>
-                            <div class="absolute inset-[2px] bg-gradient-to-r from-[#170928] via-[#1d0d33] to-[#170928] rounded-lg opacity-90"></div>
-                            <div class="absolute inset-[2px] bg-gradient-to-b from-[#654358]/40 via-[#1d0d33] to-[#2F0D64]/30 rounded-lg opacity-80"></div>
-                            <div class="absolute inset-[2px] bg-gradient-to-br from-[#C787F6]/10 via-[#1d0d33] to-[#2A1736]/50 rounded-lg"></div>
-                            <div class="absolute inset-[2px] shadow-[inset_0_0_15px_rgba(199,135,246,0.15)] rounded-lg"></div>
-                            <div class="relative flex items-center justify-center gap-2">
-                                <span class="text-lg  bg-gradient-to-b from-[#fffff9] to-[#B873F8] bg-clip-text 
-                                text-transparent drop-shadow-[0_0_12px_rgba(199,135,246,0.4)] tracking-tighter">
-                                Web Developer
-                                </span>
-                            </div>
-                            <div class="absolute inset-[2px] opacity-0 transition-opacity duration-300 bg-gradient-to-r from-[#2A1736]/20 via-[#C787F6]/10 
-                            to-[#2A1736]/20 group-hover:opacity-100 rounded-lg"></div>
-                        </button>
-                    </div>
+                        </div>
+                        <div
+                            class="pl-[3.4rem] pr-[1.1rem] group-hover:pl-[1.1rem] group-hover:pr-[3.4rem] transition-all duration-[1s] ease-[cubic-bezier(0.510,0.026,0.368,1.016)] 
+                            group-hover:text-[#170928] text-white"
+                        >
+                            Download Resume
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>

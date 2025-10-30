@@ -18,13 +18,13 @@ export default function PortofolioSection() {
     }, [filter, projects]);
 
     return (
-        <section id="projects" className="relative flex flex-col justify-center bg-black text-gray-100 py-20">
-            <div className="m-20">
+        <section id="projects" className="relative flex flex-col justify-center bg-black text-gray-100 pt-20">
+            <div className="px-6 sm:px-12 md:px-20">
                 <div className="relative z-10 flex flex-col">
                     <div ref={containerRef} style={{ position: "relative" }}>
                         <VariableProximity
                         label={"Portofolio."}
-                        className={"variable-proximity-demo text-8xl"}
+                        className={"variable-proximity-demo text-6xl sm:text-7xl md:text-8xl"}
                         fromFontVariationSettings="'wght' 400, 'opsz' 9"
                         toFontVariationSettings="'wght' 1000, 'opsz' 40"
                         containerRef={containerRef}
