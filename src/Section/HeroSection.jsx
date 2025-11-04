@@ -103,24 +103,37 @@ export default function HeroSection() {
                         I build responsive and intelligent applications to solve real-world problems.
                     </p>
 
-                    <a  
-                        href="/public/cv.pdf"
+                    <a
+                        // === PERBAIKAN 1: Path href ===
+                        href="/cv.pdf"
                         download="Gregorius_Frederico_cv.pdf"
-                        class="mt-4 font-sans cursor-pointer relative bg-white/10 py-2 rounded-full min-w-[8.5rem] min-h-[2.92rem] group max-w-full flex items-center justify-start 
-                        hover:bg-gradient-to-r from-[#D69DDE] to-[#B873F8] transition-all duration-[0.8s] ease-[cubic-bezier(0.510,0.026,0.368,1.016)] 
-                        shadow-[inset_1px_2px_5px_rgba(199,135,246,0.2)]" >
-                        <div class="absolute flex px-1 py-0.5 justify-start items-center inset-0">
+
+                        // === PERBAIKAN 2: 'class' -> 'className' ===
+                        // === PERBAIKAN 3: Padding & Tinggi Responsif ===
+                        className="mt-4 font-sans cursor-pointer relative 
+                                    bg-white/10 
+                                    py-1 sm:py-2 rounded-full 
+                                    min-h-[2.7rem] sm:min-h-[2.92rem] {/* Sedikit lebih kecil di mobile */}
+                                    group max-w-full flex items-center justify-start 
+                                    hover:bg-gradient-to-r from-[#D69DDE] to-[#B873F8] 
+                                    transition-all duration-[0.8s] ease-[cubic-bezier(0.510,0.026,0.368,1.016)] 
+                                    shadow-[inset_1px_2px_5px_rgba(199,135,246,0.2)]"
+                        >
+                        <div className="absolute flex px-1 py-0.5 justify-start items-center inset-0">
                             <div
-                            class="w-[0%] group-hover:w-full transition-all duration-[1s] ease-[cubic-bezier(0.510,0.026,0.368,1.016)]"
+                            className="w-[0%] group-hover:w-full transition-all duration-[1s] ease-[cubic-bezier(0.510,0.026,0.368,1.016)]"
                             ></div>
                             <div
-                            class="rounded-full shrink-0 flex justify-center items-center 
-                            shadow-[inset_1px_-1px_3px_0_#170928] h-full aspect-square 
-                            bg-gradient-to-r from-[#D69DDE] to-[#B873F8] transition-all duration-[1s] ease-[cubic-bezier(0.510,0.026,0.368,1.016)] 
-                            group-hover:bg-[#170928]" >
+                            className="rounded-full shrink-0 flex justify-center items-center 
+                                        shadow-[inset_1px_-1px_3px_0_#170928] h-full aspect-square 
+                                        bg-gradient-to-r from-[#D69DDE] to-[#B873F8] 
+                                        transition-all duration-[1s] ease-[cubic-bezier(0.510,0.026,0.368,1.016)] 
+                                        group-hover:bg-[#170928]"
+                            >
                             <div
-                                class="size-[0.8rem] 
-                                text-[#170928] group-hover:text-[#D69DDE] group-hover:-rotate-45 transition-all duration-[1s] ease-[cubic-bezier(0.510,0.026,0.368,1.016)]"
+                                className="size-[0.8rem] 
+                                        text-[#170928] group-hover:text-[#D69DDE] group-hover:-rotate-45 
+                                        transition-all duration-[1s] ease-[cubic-bezier(0.510,0.026,0.368,1.016)]"
                             >
                                 <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -137,9 +150,20 @@ export default function HeroSection() {
                             </div>
                             </div>
                         </div>
+                        
+                        {/* === PERBAIKAN 4: Padding Teks Responsif === */}
                         <div
-                            class="pl-[3.4rem] pr-[1.1rem] group-hover:pl-[1.1rem] group-hover:pr-[3.4rem] transition-all duration-[1s] ease-[cubic-bezier(0.510,0.026,0.368,1.016)] 
-                            group-hover:text-[#170928] text-white"
+                            className="
+                            text-base sm:text-lg {/* Ukuran font responsif */}
+                            text-white group-hover:text-[#170928]
+                            
+                            pl-[3rem] pr-[1rem] {/* Padding default (mobile) */}
+                            sm:pl-[3.4rem] sm:pr-[1.1rem] {/* Padding desktop (sm:) */}
+                            
+                            group-hover:pl-[1rem] group-hover:pr-[3rem] {/* Padding hover (mobile) */}
+                            sm:group-hover:pl-[1.1rem] sm:group-hover:pr-[3.4rem] {/* Padding hover (desktop) */}
+                            
+                            transition-all duration-[1s] ease-[cubic-bezier(0.510,0.026,0.368,1.016)]"
                         >
                             Download Resume
                         </div>

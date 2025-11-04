@@ -106,8 +106,8 @@ export const projectsData = [
       "Responsive Pixel-Art Interface: The game board dynamically adjusts its layout and uses custom pixel-art UI."
     ],
     techStack: ["React", "Tailwind", "IBM Granite"],
-    demo: "https://rsaweb-demo.com",
-    repo: "https://github.com/username/rsaweb",
+    demo: "https://mind-dungeon-games.vercel.app/",
+    repo: "https://github.com/Gr1X/mind-dungeon-games",
   },
   {
     id: "unilever-company-profile",
